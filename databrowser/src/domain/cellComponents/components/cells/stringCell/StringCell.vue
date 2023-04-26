@@ -30,9 +30,3 @@ const update = (value: unknown) =>
     value,
   });
 </script>
-
-<style scoped>
-.has-error input {
-  @apply border-error text-error;
-}
-</style>

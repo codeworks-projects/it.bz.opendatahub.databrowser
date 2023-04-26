@@ -33,6 +33,11 @@ const { isError, isSuccess, data, error, url } = useApiReadForCurrentDataset({
 </script>
 
 <style>
+/** NOTE
+* This style definition is an exception strictly necessary for applying style to components included as plugins.
+* Always use inline tailwind classes for normal component styling.
+**/
+
 .vjs-tree-brackets:hover {
   @apply text-blue-500;
 }

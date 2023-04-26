@@ -49,7 +49,11 @@ const text = computed({
 </script>
 
 <style scoped>
-.has-error input {
+/** NOTE
+* This style definition is an exception strictly necessary for showing input errors.
+* Always use inline tailwind classes for normal component styling.
+**/
+.has-error textarea {
   @apply border-error text-error;
 }
 </style>

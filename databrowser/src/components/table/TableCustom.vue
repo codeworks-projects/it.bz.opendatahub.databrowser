@@ -17,6 +17,10 @@ withDefaults(defineProps<{ id?: string }>(), { id: randomId() });
 </script>
 
 <style scoped>
+/** NOTE
+* This style definition is an exception strictly necessary for propagating the layout using vue's :deep selector.
+* Always use inline tailwind classes for normal component styling.
+**/
 .data-table :deep(th),
 .data-table :deep(td) {
   @apply border;

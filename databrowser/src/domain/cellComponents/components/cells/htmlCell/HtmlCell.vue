@@ -73,6 +73,11 @@ const toolbar = [
 </script>
 
 <style>
+/** NOTE
+* This style definition is an exception strictly necessary for applying style to components included as plugins.
+* Always use inline tailwind classes for normal component styling.
+**/
+
 .ql-toolbar {
   @apply rounded-t;
 }

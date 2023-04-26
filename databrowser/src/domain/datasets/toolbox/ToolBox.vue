@@ -143,9 +143,3 @@ watch(
   { immediate: true }
 );
 </script>
-
-<style scoped>
-.v-enter-active {
-  transition: all 0.2s ease;
-}
-</style>
