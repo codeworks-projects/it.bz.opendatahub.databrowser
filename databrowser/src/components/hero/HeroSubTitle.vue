@@ -1,17 +1,7 @@
 <template>
-  <h2 class="sub-title mt-2 max-w-2xl leading-tight text-gray-600 lg:mt-0">
+  <h2
+    class="mt-2 max-w-2xl text-xl leading-tight text-gray-600 lg:mt-0 lg:text-2xl"
+  >
     <slot></slot>
   </h2>
 </template>
-
-<style scoped>
-.sub-title {
-  font-size: 1.375rem;
-}
-
-@screen lg {
-  .sub-title {
-    font-size: 1.625rem;
-  }
-}
-</style>
