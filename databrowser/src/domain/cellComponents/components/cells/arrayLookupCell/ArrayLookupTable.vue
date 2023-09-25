@@ -22,6 +22,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
           :editable="editable"
           :options="getOptionsForItem(item, itemSet)"
           :show-empty-value="false"
+          :show-add-new-value="true"
+          :show-value-as-label-fallback="true"
           :value="item"
           @update="updateItem(index, $event.value)"
         />

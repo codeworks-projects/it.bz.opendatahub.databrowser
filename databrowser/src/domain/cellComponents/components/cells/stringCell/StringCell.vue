@@ -9,6 +9,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     v-if="isWriteable"
     input-classes="w-full"
     :model-value="text"
+    :focus="focus"
     @update:model-value="update($event)"
   />
   <span v-else>{{ text }}</span>
@@ -24,6 +25,7 @@ const emit = defineEmits(['update']);
 const props = defineProps<{
   text?: string | boolean | number;
   editable?: boolean;
+  focus?: boolean;
   readonly?: string | boolean;
 }>();
 
