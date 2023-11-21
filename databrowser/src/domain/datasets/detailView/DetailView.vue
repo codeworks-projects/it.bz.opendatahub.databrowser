@@ -9,6 +9,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <template v-else>
     <div>
       <ShowEmptyFields v-model="showAll" />
+      <ShowDeprecatedFields v-model="showDeprecated" />
     </div>
     <div class="flex md:overflow-y-auto">
       <MainAndSubCategories
@@ -33,10 +34,12 @@ import { useApiReadForCurrentDataset } from '../../api';
 import { useCategories } from '../category/useCategories';
 import ExportDatasetsToolBox from '../toolBox/ExportDatasetsToolBox.vue';
 import ShowEmptyFields from '../common/showEmptyFields/ShowEmptyFields.vue';
+import ShowDeprecatedFields from '../common/showDeprecatedFields/ShowDeprecatedFields.vue';
 import MainAndSubCategories from '../common/MainAndSubCategories.vue';
 import LoadingError from '../../../components/loading/LoadingError.vue';
 
 const showAll = ref(false);
+const showDeprecated = ref(false);
 
 const { slug, categories, subcategories, currentCategory } = useCategories();
 

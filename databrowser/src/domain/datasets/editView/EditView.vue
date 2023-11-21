@@ -38,6 +38,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         />
         <div class="flex h-screen flex-col justify-between overflow-auto">
           <ShowEmptyFields v-model="showAll" :disabled="true" />
+          <ShowDeprecatedFields v-model="showDeprecated" />
+
           <div
             class="flex grow md:overflow-y-auto"
             :class="[{ 'pointer-events-none opacity-50': isMutateLoading }]"
@@ -86,6 +88,7 @@ import { DatasetPage } from '../../../routes';
 import DiscardChangesDialog from './dialogs/DiscardChangesDialog.vue';
 import LeaveSectionDialog from './dialogs/LeaveSectionDialog.vue';
 import ShowEmptyFields from '../common/showEmptyFields/ShowEmptyFields.vue';
+import ShowDeprecatedFields from '../common/showDeprecatedFields/ShowDeprecatedFields.vue';
 import { useDialogsStore } from './dialogs/dialogsStore';
 import { useEventListener } from '@vueuse/core';
 import AlertError from '../../../components/alert/AlertError.vue';
@@ -98,6 +101,7 @@ import {
 const { t } = useI18n();
 
 const showAll = ref(true);
+const showDeprecated = ref(false);
 
 const auth = useAuth();
 
