@@ -28,6 +28,7 @@ module.exports = {
         'hint-warning-secondary': '#fdf2e6',
         'hint-error': '#d12953',
         'hint-error-secondary': '#faf0f3',
+        deprecated: '#8250DF',
         error: '#ff0000',
         disabled: '#dcdde1',
         delete: '#dc2626',

@@ -12,10 +12,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </template>
 
     <template #header-cols>
-      <TableHeaderCell v-for="(col, index) in renderElements" :key="col.title">
+      <TableHeaderCell
+        v-for="(col, index) in renderElements"
+        :key="col.title"
+        :class="{
+          'bg-deprecated/30 border-t-deprecated border-r-deprecated border-l-deprecated':
+            index === 3,
+        }"
+      >
         <SortAndFilterHeader
           :title="columns[index]?.title ?? 'index mismatch'"
           :field="columns[index]?.field"
+          :is-deprecated="index === 3"
         />
       </TableHeaderCell>
       <TableHeaderCell class="sticky right-0 bg-gray-50">
@@ -41,9 +49,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         @dblclick="rowDblClicked(row)"
       >
         <TableCell
-          v-for="col in renderElements"
+          v-for="(col, colIndex) in renderElements"
           :key="col.title"
-          :class="{ 'mix-blend-multiply': index === selectedRowIndex }"
+          :class="{
+            'mix-blend-multiply': index === selectedRowIndex,
+            ' border-r-deprecated border-l-deprecated': colIndex === 3,
+          }"
         >
           <ComponentRenderer
             :tag-name="col.component"
