@@ -11,7 +11,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
       <TooltipCustom v-if="isDeprecated">
         <template #default>
           <div
-            class="cursor-pointer bg-deprecated text-white flex items-center justify-center w-6 h-6 rounded-md leading-3"
+            class="flex h-6 w-6 cursor-pointer items-center justify-center rounded-md bg-deprecated leading-3 text-white"
           >
             &#x2022;
           </div>

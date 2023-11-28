@@ -16,7 +16,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         v-for="(col, index) in renderElements"
         :key="col.title"
         :class="{
-          'bg-deprecated/30 border-t-deprecated border-r-deprecated border-l-deprecated':
+          'border-x-deprecated border-t-deprecated bg-deprecated/30':
             index === 3,
         }"
       >
@@ -53,7 +53,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
           :key="col.title"
           :class="{
             'mix-blend-multiply': index === selectedRowIndex,
-            ' border-r-deprecated border-l-deprecated': colIndex === 3,
+            ' border-x-deprecated': colIndex === 3,
           }"
         >
           <ComponentRenderer
