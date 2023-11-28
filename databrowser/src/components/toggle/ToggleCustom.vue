@@ -26,9 +26,16 @@ import { Switch } from '@headlessui/vue';
 const emit = defineEmits(['update:modelValue']);
 
 const props = withDefaults(
-  defineProps<{ modelValue?: boolean; disabled?: boolean }>(),
+  defineProps<{
+    modelValue?: boolean;
+    disabled?: boolean;
+    activeBorderClass?: string;
+    activeBgClass?: string;
+  }>(),
   {
     modelValue: true,
+    activeBorderClass: 'border-green-400',
+    activeBgClass: 'bg-green-400',
   }
 );
 
@@ -39,7 +46,7 @@ const switchColorClass = computed(() => {
     return 'border-gray-400';
   }
 
-  return props.modelValue === true ? 'border-green-400' : 'border-red-400';
+  return props.modelValue === true ? props.activeBorderClass : 'border-red-400';
 });
 
 const spanColorClass = computed(() => {
@@ -47,6 +54,6 @@ const spanColorClass = computed(() => {
     return 'bg-gray-400';
   }
 
-  return props.modelValue === true ? 'bg-green-400' : 'bg-red-400';
+  return props.modelValue === true ? props.activeBgClass : 'bg-red-400';
 });
 </script>

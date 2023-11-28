@@ -13,6 +13,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
       v-model="showAll"
       :disabled="disabled"
       data-test="show-empty-fields"
+      active-bg-class="bg-deprecated"
+      active-border-class="border-deprecated"
     />
   </ContentAlignmentX>
 </template>
