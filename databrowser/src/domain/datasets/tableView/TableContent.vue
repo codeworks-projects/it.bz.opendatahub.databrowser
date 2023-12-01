@@ -23,7 +23,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         <SortAndFilterHeader
           :title="columns[index]?.title ?? 'index mismatch'"
           :field="columns[index]?.field"
-          :is-deprecated="index === 3"
+          :is-deprecated="columns[index]?.deprecated"
         />
       </TableHeaderCell>
       <TableHeaderCell class="sticky right-0 bg-gray-50">
@@ -49,11 +49,11 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         @dblclick="rowDblClicked(row)"
       >
         <TableCell
-          v-for="(col, colIndex) in renderElements"
+          v-for="col in renderElements"
           :key="col.title"
           :class="{
             'mix-blend-multiply': index === selectedRowIndex,
-            ' border-x-deprecated': colIndex === 3,
+            ' border-x-deprecated': col.deprecated,
           }"
         >
           <ComponentRenderer
