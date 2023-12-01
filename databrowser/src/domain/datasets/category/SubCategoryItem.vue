@@ -5,7 +5,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <template>
-  <div class="relative pb-2" :class="{ 'has-error': hasError }">
+  <div
+    class="relative pb-2"
+    :class="{ 'has-error': hasError, 'is-deprecated': isDeprecated }"
+  >
     <div
       v-if="hasTitleOrTooltip"
       class="relative flex items-center justify-between py-1"
@@ -44,6 +47,7 @@ const props = defineProps<{
   tooltip?: string;
   required?: boolean;
   errors?: string[];
+  isDeprecated?: boolean;
   hasEmptyValue?: boolean;
 }>();
 

@@ -58,4 +58,8 @@ const text = computed({
 .has-error input {
   @apply border-error text-error;
 }
+
+.is-deprecated input {
+  @apply border-deprecated text-deprecated;
+}
 </style>
